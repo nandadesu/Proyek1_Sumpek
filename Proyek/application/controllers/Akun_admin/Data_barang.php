@@ -33,6 +33,7 @@
         {
             $nama_barang    = $this->input->post('nama_barang');
             $deskripsi      = $this->input->post('deskripsi');
+            $kategori       = $this->input->post('kategori');
             $harga          = $this->input->post('harga');
             $stok           = $this->input->post('stok');
             $gambar         = $_FILES['gambar']['name'];
@@ -50,6 +51,7 @@
             $data = array(
                 'nama_barang'   => $nama_barang,
                 'deskripsi'     => $deskripsi,
+                'kategori'         => $kategori,
                 'harga'         => $harga,
                 'stok'          => $stok,
                 'gambar'        => $gambar
@@ -76,6 +78,7 @@
             $id             = $this->input->post('id_barang');
             $nama_barang    = $this->input->post('nama_barang');
             $deskripsi      = $this->input->post('deskripsi');
+            $kategori       = $this->input->post('kategori');
             $harga          = $this->input->post('harga');
             $stok           = $this->input->post('stok');
 
@@ -83,6 +86,7 @@
             $data = array(
                 'nama_barang'   => $nama_barang,
                 'deskripsi'     => $deskripsi,
+                'kategori'      => $kategori,
                 'harga'         => $harga,
                 'stok'          => $stok,
             );

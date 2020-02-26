@@ -23,7 +23,7 @@
 
         public function find($id){
             $result = $this ->db->where('id_barang',$id)
-                            ->limit(1)
+                            ->limit(6)
                             ->get('product');
             if($result->num_rows() > 0){
                 return $result->row();
@@ -39,6 +39,14 @@
             }else{
                 return FALSE;
             }
+        }
+
+        public function get_keyword($keyword){
+            $this->db->from('product');
+            $this->db->like('nama_barang',$keyword);
+            $this->db->or_like('kategori',$keyword);
+            return $this->db->get()->result();
+
         }
 
 

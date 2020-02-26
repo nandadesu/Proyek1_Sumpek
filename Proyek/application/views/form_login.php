@@ -25,12 +25,12 @@
                         <?php echo form_error('username','<div class="text_danger">','</div>'); ?>
                       </div>
                       <div class="form-group">
-                        <input type="text" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                        <input data-toggle="password" type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                         <?php echo form_error('password','<div class="text_danger">','</div>'); ?>
-                      </div>
+                      </div><hr>
+
                       <button type="submit" class="btn btn-primary form-control">Login</button>
                       </a>
-                      <hr>
                   </form>
                   <hr>
                   <div class="text-center">

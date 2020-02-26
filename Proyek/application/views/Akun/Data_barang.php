@@ -5,9 +5,10 @@
             <th>No</th>
             <th>Nama Barang</th>
             <th>Deskripsi</th>
+            <th>Kategori</th>
             <th>Harga</th>
             <th>Stok</th>
-            <th colspan="3">Aksi</th>
+            <th colspan="2">Aksi</th>
         </tr>
         <?php  
             $no=1;
@@ -16,6 +17,7 @@
                 <td><?php echo $no++ ?></td>
                 <td><?php echo $brg->nama_barang ?></td>
                 <td><?php echo $brg->deskripsi ?></td>
+                <td><?php echo $brg->kategori ?></td>
                 <td><?php echo $brg->harga ?></td>
                 <td><?php echo $brg->stok ?></td>
                 <td><?php echo anchor('Akun_admin/Data_barang/edit/' .$brg->id_barang , '<div class="btn btn-primary btn-sm"><i class="fas fa-edit fa-sm"></i></div>') ?></td>
@@ -46,6 +48,14 @@
                 <input type="text" name="deskripsi" class="form-control" value="<?php echo $brg->deskripsi ?>">
             </div>
             <div class="form-group">
+                <label>Kategori</label>
+                <select name="kategori" class="form-control">
+                  <option>Sofa</option>
+                  <option>Kursi</option>
+                  <option>Meja</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label>Harga</label>
                 <input type="text" name="harga" class="form-control" value="<?php echo $brg->harga ?>">
             </div>
@@ -55,7 +65,7 @@
             </div>
             <div class="form-group">
                 <label>Gambar Produk</label><br>
-                <input type="file" name="gambar" class="form-control" value="<?php echo $brg->gambars ?>">
+                <input type="file" name="gambar" class="form-control" value="<?php echo $brg->gambar ?>">
             </div>
         
       </div>

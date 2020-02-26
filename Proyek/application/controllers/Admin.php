@@ -8,10 +8,6 @@
         {
             
             $data['barang']= $this->model_barang->tampil_data()->result();
-
-            if($this->input->post('keyword')){
-                $data['product']=$this->model_barang->tampil_data()->result();
-            }
             $this->load->view('Template/header');
             $this->load->view('Template/sidebar');
             $this->load->view('Admin/Admin',$data) ;
@@ -22,7 +18,7 @@
             $barang = $this->model_barang->find($id);
             $data = array(
                 'id'      => $barang->id_barang,
-                'qty'     => 1,
+                'qty'     => $barang->jumlah,
                 'price'   => $barang->harga,
                 'name'    => $barang->nama_barang,
             );
@@ -78,6 +74,24 @@
             $this->load->view('Template/sidebar');
             $this->load->view('Admin/detail_barang',$data) ;
             $this->load->view('Template/footer');
+        }
+        public function search(){
+            $keyword = $this->input->post('keyword');
+            var_dump($keyword);
+            $data['barang']=$this->model_barang->get_keyword($keyword);
+            $this->load->view('Template/header');
+            $this->load->view('Template/sidebar');
+            $this->load->view('Admin/Admin',$data) ;
+            $this->load->view('Template/footer');
+
+        }
+
+        public function user()
+        {
+            $this->load->view('Template_user/header');
+            $this->load->view('Template_user/sidebar');
+            $this->load->view('Akun/User_profile') ;
+            $this->load->view('Template_user/footer');
         }
     
     }

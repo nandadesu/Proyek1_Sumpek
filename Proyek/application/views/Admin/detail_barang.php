@@ -18,6 +18,11 @@
               <tr>
                 <td>Keterangan</td>
                 <td><strong><?php echo $brg->deskripsi ?></strong></td>
+              </tr>
+              <tr>
+                <td>Kategori</td>
+                <td><strong><?php echo $brg->kategori ?></strong></td>
+              </tr>
               <tr>
                 <td>Stok</td>
                 <td><strong><?php echo $brg->stok ?></strong></td>
