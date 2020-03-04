@@ -34,10 +34,14 @@
                     <h5 class="card-title mb-1"><?php echo $brg->nama_barang ?></h5>
                     <small><?php echo $brg->deskripsi ?></small><br>
                     <span class="badge badge-success mb-3">Rp. <?php echo number_format ($brg->harga, 0,',','.') ?></span><br>
-                        <div class="col-sm">
-                            <input type="text" class="form-control" placeholder="Masukkan value Item" name="jumlah">                    
-                        </div><br>
-                    <?php echo anchor('Admin/tambah_keranjang/' .$brg->id_barang,'<div class="btn btn-primary btn-sm">Tambah ke keranjang</div>') ?>
+
+                       <form method="POST" action="<?php echo base_url().'Admin/tambah_keranjang/'.$brg->id_barang?>">
+                            <div class="col-sm">
+                                <input type="number" class="form-control" placeholder="Masukkan value Item" name="qty">                    
+                            </div><br>
+                            <button class="btn btn-primary btn-sm" type=submit>Tambah Keranjang</button>
+                       </form>
+                    <?php  anchor('Admin/tambah_keranjang/' .$brg->id_barang,) ?>
                     <?php echo anchor('Admin/detail/' .$brg->id_barang,'<div class="btn btn-success btn-sm">Lihat</div>') ?>
 
                 </div>
@@ -45,3 +49,5 @@
         <?php endforeach ?>
     </div>
 </div>
+
+ 

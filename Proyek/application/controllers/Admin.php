@@ -13,19 +13,19 @@
             $this->load->view('Admin/Admin',$data) ;
             $this->load->view('Template/footer');
         }
+
         public function tambah_keranjang($id)
         {
             $barang = $this->model_barang->find($id);
+            $jumlah = $this->input->post('qty');
             $data = array(
-                'id'      => $barang->id_barang,
-                'qty'     => $barang->jumlah,
-                'price'   => $barang->harga,
-                'name'    => $barang->nama_barang,
+                'id'            => $barang->id_barang,
+                'qty'           => $jumlah,
+                'price'         => $barang->harga,
+                'name'          => $barang->nama_barang
             );
-            
             $this->cart->insert($data);
-            
-            redirect('Admin');
+            redirect('Admin','refresh');
             
         }
 

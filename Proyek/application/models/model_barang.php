@@ -23,7 +23,7 @@
 
         public function find($id){
             $result = $this ->db->where('id_barang',$id)
-                            ->limit(6)
+                            ->limit(1)
                             ->get('product');
             if($result->num_rows() > 0){
                 return $result->row();
@@ -34,6 +34,7 @@
 
         public function detail_barang($id_barang){
             $result = $this ->db->where('id_barang',$id_barang)->get('product');
+            return $this->db->get()->result();
             if($result->num_rows() > 0){
                 return $result->result();
             }else{

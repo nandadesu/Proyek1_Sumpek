@@ -7,7 +7,7 @@
     
         public function index()
         {
-            $data['invoice'] = $this->model_invoice->tampil_data();
+            $data['invoice'] = $this->model_history->tampil_data();
             $this->load->view('Template_user/header');
             $this->load->view('Template_user/sidebar');
             $this->load->view('Admin/History',$data) ;

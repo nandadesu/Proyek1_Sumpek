@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 26, 2020 at 04:44 AM
+-- Generation Time: Mar 04, 2020 at 03:33 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -53,7 +53,8 @@ INSERT INTO `invoice` (`id`, `id_transaksi`, `id_barang`, `nama_barang`, `jumlah
 (8, 20, 2, 'Sofa', 2, 1300000, ''),
 (9, 21, 2, 'Sofa', 1, 1300000, ''),
 (10, 21, 4, 'Meja', 1, 999000, ''),
-(11, 22, 2, 'Sofa', 1, 1300000, '');
+(11, 22, 2, 'Sofa', 1, 1300000, ''),
+(13, 24, 1, 'Kursinya', 1, 900000, '');
 
 --
 -- Triggers `invoice`
@@ -87,14 +88,14 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id_barang`, `nama_barang`, `deskripsi`, `kategori`, `harga`, `stok`, `gambar`) VALUES
-(1, 'Kursinya', 'Ini adalah kursi', 'kursi', 900000, 10, 'p1.jpg'),
+(1, 'Kursinya', 'Ini adalah kursi', 'kursi', 900000, 9, 'p1.jpg'),
 (2, 'Sofa', 'ini adalah sofa', 'sofa', 1300000, 9, 'p2.jpg'),
 (3, 'Sofa 2', 'ini adalah sofa', 'sofa', 1250000, 4, 'p3.jpg'),
 (4, 'Meja', 'ini adalah meja', 'meja', 999000, 9, 'p4.jpg'),
 (5, 'Meja Kerja', 'ini adalah meja kerja', 'meja', 950000, 10, 'p5.jpg'),
 (6, 'Kursi Kerja', 'ini adalah kursi kerja', 'kursi', 760000, 10, 'p6.jpg'),
 (7, 'Meja Tv', 'ini adlah meja tv', 'meja', 11500000, 5, 'p7.jpg'),
-(8, 'Meja Belajar', 'ini adlah meja belajar', 'meja', 1050000, 4, 'p8.jpg');
+(8, 'Meja Belajar', 'ini adlah meja belajar', 'meja', 1050000, 3, 'p8.jpg');
 
 -- --------------------------------------------------------
 
@@ -136,7 +137,10 @@ INSERT INTO `transaksi` (`id`, `nama`, `alamat`, `tglPesan`, `batasBayar`) VALUE
 (19, 'gustiananda', 'semanggi barat', '2020-02-18 09:26:53', '2020-02-19 09:26:53'),
 (20, 'as', 'malang', '2020-02-18 09:29:48', '2020-02-19 09:29:48'),
 (21, 'nanda', 'semanggi barat', '2020-02-18 10:22:19', '2020-02-19 10:22:19'),
-(22, '', '', '2020-02-24 22:35:05', '2020-02-25 22:35:05');
+(22, '', '', '2020-02-24 22:35:05', '2020-02-25 22:35:05'),
+(23, 'qqdq', 'qdqdq', '2020-03-01 00:03:37', '2020-03-02 00:03:37'),
+(24, 'nanda', 'qdqdq', '2020-03-03 22:46:32', '2020-03-04 22:46:32'),
+(25, 'nanda', 'qdqdq', '2020-03-03 22:47:03', '2020-03-04 22:47:03');
 
 -- --------------------------------------------------------
 
@@ -200,7 +204,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -212,7 +216,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `user`

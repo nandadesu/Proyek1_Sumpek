@@ -9,14 +9,14 @@
             $nama       = $this->input->post('nama');
             $alamat       = $this->input->post('alamat');
 
-            $invoice = array(
+            $ar = array(
                 'nama'      => $nama,
                 'alamat'    => $alamat,
                 'tglPesan'    => date('Y-m-d H:i:s'),
                 'batasBayar'    => date('Y-m-d H:i:s',mktime(date('H'),
                 date('i'),date('s'),date('m'),date('d') + 1 ,date('Y')))
             );
-            $this->db->insert('transaksi', $invoice);
+            $this->db->insert('transaksi', $ar);
             $id_invoice = $this->db->insert_id();
 
             foreach($this->cart->contents() as $item){

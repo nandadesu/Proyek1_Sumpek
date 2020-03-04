@@ -31,7 +31,7 @@
       <a class="nav-link" href="<?php echo base_url('History') ?>">
         <i class="fas fa-fw fa-table"></i>
         <span>History</span></a>
-    </li>s
+    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
