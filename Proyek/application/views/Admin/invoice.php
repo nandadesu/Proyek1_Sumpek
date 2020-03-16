@@ -21,7 +21,7 @@
             </tr>
             </thead>
             <tbody>
-            <?php foreach($invoice as $inv):?>
+            <?php foreach($transaksi as $inv):?>
                 <tr>
                     <td><?php echo $inv->id ?></td>
                     <td><?php echo $inv->nama ?></td>

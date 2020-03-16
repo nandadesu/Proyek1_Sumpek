@@ -3,6 +3,11 @@
     defined('BASEPATH') OR exit('No direct script access allowed');
     
     class Auth extends CI_Controller {
+        public function __construct(){
+            parent::__construct();
+            $this->load->model('model_auth');
+        }
+
     
         public function login()
         {
@@ -29,13 +34,16 @@
                 }else{
                     $this->session->set_userdata('username',$auth->username);
                     $this->session->set_userdata('role_id',$auth->role_id);
+                    $this->session->set_userdata('id_user',$auth->id);
+
+                    $this->session->set_flashdata('id_user',$auth->id);
 
                     switch($auth->role_id){
                         case 1 : 
-                            redirect('Admin_akun/index');
+                            redirect('Akun_admin/Data_barang');
                             break;
                         case 2 : 
-                            redirect('Admin/index');
+                            redirect('History/index');
                             break;
                         default: break;
                     }

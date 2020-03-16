@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2020 at 03:33 AM
+-- Generation Time: Mar 16, 2020 at 08:15 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -43,18 +43,7 @@ CREATE TABLE `invoice` (
 --
 
 INSERT INTO `invoice` (`id`, `id_transaksi`, `id_barang`, `nama_barang`, `jumlah`, `harga`, `pilihan`) VALUES
-(1, 13, 2, 'Sofa', 1, 1300000, ''),
-(2, 14, 2, 'Sofa', 1, 1300000, ''),
-(3, 15, 3, 'Sofa 2', 1, 1250000, ''),
-(4, 16, 3, 'Sofa 2', 1, 1250000, ''),
-(5, 17, 2, 'Sofa', 1, 1300000, ''),
-(6, 18, 2, 'Sofa', 1, 1300000, ''),
-(7, 19, 8, 'Meja Belajar', 1, 1050000, ''),
-(8, 20, 2, 'Sofa', 2, 1300000, ''),
-(9, 21, 2, 'Sofa', 1, 1300000, ''),
-(10, 21, 4, 'Meja', 1, 999000, ''),
-(11, 22, 2, 'Sofa', 1, 1300000, ''),
-(13, 24, 1, 'Kursinya', 1, 900000, '');
+(7, 19, 8, 'Meja Belajar', 1, 1050000, '');
 
 --
 -- Triggers `invoice`
@@ -89,7 +78,7 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`id_barang`, `nama_barang`, `deskripsi`, `kategori`, `harga`, `stok`, `gambar`) VALUES
 (1, 'Kursinya', 'Ini adalah kursi', 'kursi', 900000, 9, 'p1.jpg'),
-(2, 'Sofa', 'ini adalah sofa', 'sofa', 1300000, 9, 'p2.jpg'),
+(2, 'Sofa', 'ini adalah sofa', 'sofa', 1300000, 5, 'p2.jpg'),
 (3, 'Sofa 2', 'ini adalah sofa', 'sofa', 1250000, 4, 'p3.jpg'),
 (4, 'Meja', 'ini adalah meja', 'meja', 999000, 9, 'p4.jpg'),
 (5, 'Meja Kerja', 'ini adalah meja kerja', 'meja', 950000, 10, 'p5.jpg'),
@@ -105,6 +94,7 @@ INSERT INTO `product` (`id_barang`, `nama_barang`, `deskripsi`, `kategori`, `har
 
 CREATE TABLE `transaksi` (
   `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `tglPesan` datetime NOT NULL,
@@ -115,32 +105,11 @@ CREATE TABLE `transaksi` (
 -- Dumping data for table `transaksi`
 --
 
-INSERT INTO `transaksi` (`id`, `nama`, `alamat`, `tglPesan`, `batasBayar`) VALUES
-(1, 'nanda', 'semanggi barat', '2020-02-12 02:46:53', '2020-02-13 02:46:53'),
-(2, 'nanda', 'semanggi barat', '2020-02-12 02:52:56', '2020-02-13 02:52:56'),
-(3, 'nanda', 'semanggi barat', '2020-02-12 02:55:02', '2020-02-13 02:55:02'),
-(4, 'nanda', 'semanggi barat', '2020-02-12 02:56:05', '2020-02-13 02:56:05'),
-(5, 'nanda', 'semanggi barat', '2020-02-12 02:56:14', '2020-02-13 02:56:14'),
-(6, 'nanda', 'semanggi barat', '2020-02-12 02:57:15', '2020-02-13 02:57:15'),
-(7, 'nanda', 'semanggi barat', '2020-02-12 02:57:59', '2020-02-13 02:57:59'),
-(8, 'nanda', 'semanggi barat', '2020-02-12 02:59:34', '2020-02-13 02:59:34'),
-(9, 'nanda', 'semanggi barat', '2020-02-12 03:00:43', '2020-02-13 03:00:43'),
-(10, 'nanda', 'semanggi barat', '2020-02-12 03:06:38', '2020-02-13 03:06:38'),
-(11, 'nanda', 'semanggi barat', '2020-02-12 03:08:02', '2020-02-13 03:08:02'),
-(12, 'nanda', 'semanggi barat', '2020-02-12 03:11:15', '2020-02-13 03:11:15'),
-(13, 'nanda', 'semanggi barat', '2020-02-12 03:11:41', '2020-02-13 03:11:41'),
-(14, 'nanda', 'semanggi barat', '2020-02-12 07:03:48', '2020-02-13 07:03:48'),
-(15, 'nanda', 'semanggi barat', '2020-02-16 15:00:36', '2020-02-17 15:00:36'),
-(16, 'nanda', 'semanggi barat', '2020-02-16 19:01:06', '2020-02-17 19:01:06'),
-(17, 'nanda', 'semanggi barat', '2020-02-16 19:02:21', '2020-02-17 19:02:21'),
-(18, 'nanda', 'semanggi barat', '2020-02-16 19:36:12', '2020-02-17 19:36:12'),
-(19, 'gustiananda', 'semanggi barat', '2020-02-18 09:26:53', '2020-02-19 09:26:53'),
-(20, 'as', 'malang', '2020-02-18 09:29:48', '2020-02-19 09:29:48'),
-(21, 'nanda', 'semanggi barat', '2020-02-18 10:22:19', '2020-02-19 10:22:19'),
-(22, '', '', '2020-02-24 22:35:05', '2020-02-25 22:35:05'),
-(23, 'qqdq', 'qdqdq', '2020-03-01 00:03:37', '2020-03-02 00:03:37'),
-(24, 'nanda', 'qdqdq', '2020-03-03 22:46:32', '2020-03-04 22:46:32'),
-(25, 'nanda', 'qdqdq', '2020-03-03 22:47:03', '2020-03-04 22:47:03');
+INSERT INTO `transaksi` (`id`, `id_user`, `nama`, `alamat`, `tglPesan`, `batasBayar`) VALUES
+(1, 2, 'nanda', 'semanggi barat', '2020-02-12 02:46:53', '2020-02-13 02:46:53'),
+(2, 2, 'nanda', 'semanggi barat', '2020-02-12 02:52:56', '2020-02-13 02:52:56'),
+(3, 2, 'nanda', 'semanggi barat', '2020-02-12 02:55:02', '2020-02-13 02:55:02'),
+(19, 3, 'gustiananda', 'semanggi barat', '2020-02-18 09:26:53', '2020-02-19 09:26:53');
 
 -- --------------------------------------------------------
 
@@ -149,7 +118,7 @@ INSERT INTO `transaksi` (`id`, `nama`, `alamat`, `tglPesan`, `batasBayar`) VALUE
 --
 
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
+  `id` int(25) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
@@ -162,7 +131,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `nama`, `username`, `password`, `role_id`) VALUES
 (1, 'admin', 'admin', 'admin', 1),
-(2, 'nanda', 'gin', '123', 2),
+(2, 'nanda', 'nanda', '123', 2),
 (3, 'gustiananda', 'gusti', '12345', 2),
 (4, 'Riri', 'riri', '12345', 2);
 
@@ -204,7 +173,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -216,13 +185,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
@@ -234,6 +203,12 @@ ALTER TABLE `user`
 ALTER TABLE `invoice`
   ADD CONSTRAINT `invoice_ibfk_1` FOREIGN KEY (`id_transaksi`) REFERENCES `transaksi` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `invoice_ibfk_2` FOREIGN KEY (`id_barang`) REFERENCES `product` (`id_barang`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `transaksi`
+--
+ALTER TABLE `transaksi`
+  ADD CONSTRAINT `id_userfk1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

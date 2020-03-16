@@ -101,7 +101,7 @@
           <div class="navbar">
             <ul class="nav navbar-nav navbar-right ">
               <li>
-                <a class="nav-link" href="<?php echo base_url('Admin/user') ?>">
+                <a class="nav-link" href="<?php echo base_url('History/index') ?>">
                 <i class="fas fa-user"></i></a>
               </li>
             </ul>

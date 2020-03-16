@@ -6,7 +6,7 @@
         
         public function index()
         {
-            
+            $id = $this->session->flashdata('id_user');
             $data['barang']= $this->model_barang->tampil_data()->result();
             $this->load->view('Template/header');
             $this->load->view('Template/sidebar');
@@ -69,7 +69,7 @@
         }
         public function detail($id_barang)
         {
-            $data['product']= $this->model_barang->detail_barang($id_barang);
+            $data['barang']= $this->model_barang->detail_barang($id_barang);
             $this->load->view('Template/header');
             $this->load->view('Template/sidebar');
             $this->load->view('Admin/detail_barang',$data) ;
@@ -77,21 +77,12 @@
         }
         public function search(){
             $keyword = $this->input->post('keyword');
-            var_dump($keyword);
             $data['barang']=$this->model_barang->get_keyword($keyword);
             $this->load->view('Template/header');
             $this->load->view('Template/sidebar');
             $this->load->view('Admin/Admin',$data) ;
             $this->load->view('Template/footer');
 
-        }
-
-        public function user()
-        {
-            $this->load->view('Template_user/header');
-            $this->load->view('Template_user/sidebar');
-            $this->load->view('Akun/User_profile') ;
-            $this->load->view('Template_user/footer');
         }
     
     }

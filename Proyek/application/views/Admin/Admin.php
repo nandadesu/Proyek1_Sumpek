@@ -39,10 +39,11 @@
                             <div class="col-sm">
                                 <input type="number" class="form-control" placeholder="Masukkan value Item" name="qty">                    
                             </div><br>
-                            <button class="btn btn-primary btn-sm" type=submit>Tambah Keranjang</button>
+                            <button class="btn btn-primary btn-sm btn-block" type=submit>Tambah <i class="fas fa-shopping-cart"></i></button>
                        </form>
-                    <?php  anchor('Admin/tambah_keranjang/' .$brg->id_barang,) ?>
-                    <?php echo anchor('Admin/detail/' .$brg->id_barang,'<div class="btn btn-success btn-sm">Lihat</div>') ?>
+                       <p></p>
+                    <?php  anchor('Admin/tambah_keranjang/' .$brg->id_barang) ?>
+                    <?php echo anchor('Admin/detail/' .$brg->id_barang,'<div class="btn btn-secondary btn-lg btn-block"><i class="fas fa-eye"></i></div>') ?>
 
                 </div>
             </div>

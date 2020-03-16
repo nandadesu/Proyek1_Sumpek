@@ -13,7 +13,7 @@
       <div class="sidebar-brand-icon rotate-n-15">
       <i class="fa fa-home" aria-hidden="true"></i>
       </div>
-      <div class="sidebar-brand-text mx-3">Admin</div>
+      <div class="sidebar-brand-text mx-3">Profile</div>
     </a>
 
     <!-- Divider -->
@@ -21,12 +21,12 @@
 
 
    
-    <!-- Nav Item - Tables -->
+    <!-- Nav Item - Tables 
     <li class="nav-item">
       <a class="nav-link" href="<?php echo base_url('Admin/User') ?>">
         <i class="fas fa-fw fa-table"></i>
         <span>Profile</span></a>
-    </li>
+    </li>-->
     <li class="nav-item">
       <a class="nav-link" href="<?php echo base_url('History') ?>">
         <i class="fas fa-fw fa-table"></i>

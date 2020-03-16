@@ -13,10 +13,9 @@
             <th>Sub Total</th>
         </tr>
         <?php $total = 0; ?>
-        <?php      foreach ($invoice as $psn):{
+        <?php foreach ($invoice as $psn):
               $subtotal = $psn->jumlah * $psn->harga;
               $total += $subtotal;
-            }
         ?>
         <tr>
             <td><?php echo $psn->id_barang ?></td>

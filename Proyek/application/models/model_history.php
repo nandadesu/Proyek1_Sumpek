@@ -32,8 +32,9 @@
             }
             return TRUE;
         }
-        public function tampil_data(){
-            $result = $this->db->get('transaksi');
+
+        public function tampil_data($id){
+            $result = $this->db->where('id_user',$id)->get('transaksi');
             if($result->num_rows() > 0){
                 return $result->result();
             }else {

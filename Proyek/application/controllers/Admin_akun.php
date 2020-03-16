@@ -25,7 +25,7 @@
             $data['title']='Admin Page';
             $this->load->view('Template_admin/Header', $data);
             $this->load->view('Template_admin/Sidebar');
-            $this->load->view('Akun/Admin_Akun');
+            $this->load->view('Akun/Data_barang');
             $this->load->view('Template_admin/Footer');
         }
     
